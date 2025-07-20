@@ -14,8 +14,14 @@ const io = socketIo(server, {
 io.on('connection', (socket) => {
   console.log('a user connected');
 
+  // Drawing event
   socket.on('drawing', (data) => {
     socket.broadcast.emit('drawing', data);
+  });
+
+  // Clear event
+  socket.on('clear', () => {
+    io.emit('clear');
   });
 
   socket.on('disconnect', () => {
