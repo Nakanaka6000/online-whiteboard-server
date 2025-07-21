@@ -29,6 +29,11 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('image', imageData);
   });
 
+  // Image update event (move/resize)
+  socket.on('imageUpdate', (updateData) => {
+    socket.broadcast.emit('imageUpdate', updateData);
+  });
+
   socket.on('disconnect', () => {
     console.log('user disconnected');
   });
