@@ -24,6 +24,11 @@ io.on('connection', (socket) => {
     io.emit('clear');
   });
 
+  // Image event
+  socket.on('image', (imageData) => {
+    socket.broadcast.emit('image', imageData);
+  });
+
   socket.on('disconnect', () => {
     console.log('user disconnected');
   });
