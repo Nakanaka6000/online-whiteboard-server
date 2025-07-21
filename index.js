@@ -34,6 +34,11 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('imageUpdate', updateData);
   });
 
+  // Text event
+  socket.on('text', (textData) => {
+    socket.broadcast.emit('text', textData);
+  });
+
   socket.on('disconnect', () => {
     console.log('user disconnected');
   });
