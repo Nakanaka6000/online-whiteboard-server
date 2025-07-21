@@ -29,9 +29,9 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('image', imageData);
   });
 
-  // Image update event (move/resize)
-  socket.on('imageUpdate', (updateData) => {
-    socket.broadcast.emit('imageUpdate', updateData);
+  // Element update event (move/resize)
+  socket.on('elementUpdate', (updateData) => {
+    socket.broadcast.emit('elementUpdate', updateData);
   });
 
   // Text event
