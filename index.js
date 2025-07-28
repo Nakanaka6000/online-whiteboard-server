@@ -28,7 +28,7 @@ io.on('connection', (socket) => {
       if (socket.currentPath) socket.currentPath.push(data);
     } else if (data.type === 'stop') {
       if (socket.currentPath) {
-        drawnElements.push({ type: 'path', path: socket.currentPath, strokeColor: data.strokeColor, strokeWidth: data.strokeWidth });
+        drawnElements.push({ type: 'path', path: socket.currentPath, strokeColor: data.strokeColor, strokeWidth: data.strokeWidth, tool: data.tool });
         socket.currentPath = [];
       }
     }
